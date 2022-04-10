@@ -13,6 +13,24 @@ RPG Game
 Commands:
   go [direction]
   get [item]
+
+Possible directions of movement
+  [north]
+  [south]
+  [east]
+  [west]
+  [downstairs]
+  [upstairs]
+  [downstairs north end]
+  [downstairs south end]
+  [westnorth]
+  [westsouth]
+  [eastnorth]
+  [eastsouth]
+  [northeast]
+  [northwest]
+  [southeast]
+  [southwest]
 ''')
 
 
@@ -20,6 +38,10 @@ def showStatus():
     # print the player's current status
     print('---------------------------')
     print('You are in the ' + currentRoom)
+    if 'deets' in rooms[currentRoom]:
+        print('You quickly scan the room and see that ' +
+              rooms[currentRoom]['deets'])
+
     # print the current inventory
     print('Inventory : ' + str(inventory))
     # print an item if there is one
@@ -33,7 +55,7 @@ inventory = []
 
 
 # start the player in the Hall
-currentRoom = 'Hall'
+currentRoom = 'Great Hall'
 
 showInstructions()
 
