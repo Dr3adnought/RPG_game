@@ -44,15 +44,16 @@ def newPlayer():
         sys.stdout.flush()
         time.sleep(0.1)
     # print("\n")
+    return newPlayer
 
 
-def showStatus(newPlayer):
+def showStatus(player):
 
     # print the player's current status
     print('---------------------------')
-    print(f'{newPlayer}, you are in the ' + currentRoom)
+    print(f'{player}, you are in the ' + currentRoom)
     if 'deets' in rooms[currentRoom]:
-        print(f'{newPlayer}, you quickly scan the immediate area and see that ' +
+        print(f'{player}, you quickly scan the immediate area and see that ' +
               rooms[currentRoom]['deets'])
 
     # print the current inventory
