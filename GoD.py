@@ -10,9 +10,21 @@ import time
 # Replace RPG starter project with this code when new instructions are live
 
 
+def clear():
+    os.system('clear')
+
+
+def type_delay(char, delay=0.1):
+    for l in char:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(delay)
+
+
 def showInstructions():
     # clear the screen, clean the place up a little
-    os.system('clear')
+    clear()
+
     # print a main menu and the commands
     print('''
          Game of Dragons
@@ -36,37 +48,40 @@ crsr = "> "
 
 def newPlayer():
     # ask the player for input of their name
+    clear()
 
-    newPlayer = input(
+    player = input(
         f"{crsr}Welcome vagabond, what is thy name? \n\n{crsr}").strip().title()
-    for l in newPlayer:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(0.1)
-    # print("\n")
-    return newPlayer
+
+    # print("")
+    for char in player:
+        type_delay(char)
+
+    print(", welcome to the Game of Dragons!")
+    # print(type(player))
+    return player
 
 
-def showStatus(player):
-
+def showStatus():
+    # newPlayer(player)
     # print the player's current status
     print('---------------------------')
-    print(f'{player}, you are in the ' + currentRoom)
+    print(player + ' you are in the ' + currentRoom)
     if 'deets' in rooms[currentRoom]:
-        print(f'{player}, you quickly scan the immediate area and see that ' +
+        print('You quickly scan the immediate area and see that ' +
               rooms[currentRoom]['deets'])
 
     # print the current inventory
     print('Inventory : ' + str(inventory))
     # print an item if there is one
     if "item" in rooms[currentRoom]:
-        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['item'])
+        print(player + ', you see a ' + rooms[currentRoom]['item'])
     # print a weapon if there is one
     if "weapon" in rooms[currentRoom]:
-        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['weapon'])
+        print(f', you see a ' + rooms[currentRoom]['weapon'])
     # print a shield if there is one
     if "shield" in rooms[currentRoom]:
-        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['shield'])
+        print(f', you see a ' + rooms[currentRoom]['shield'])
     print("---------------------------")
 
 
@@ -76,16 +91,17 @@ inventory = []
 
 # start the player in the Hall
 currentRoom = 'Great Hall'
+player = newPlayer()
 
 showInstructions()
 sleep(3)
-os.system('clear')
+clear()
 newPlayer()
 
 # loop forever
 while True:
 
-    showStatus(newPlayer)
+    showStatus()
 
     # get the player's next 'move'
     # .split() breaks it up into an list array
@@ -93,7 +109,7 @@ while True:
     # ['go','east']
     move = ''
     while move == '':
-        move = input('>')
+        move = input('> ')
 
     # split allows an items to have a space on them
     # get golden key is returned ["get", "golden key"]
