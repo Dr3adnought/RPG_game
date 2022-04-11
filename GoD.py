@@ -39,7 +39,7 @@ def showStatus():
     print('---------------------------')
     print('You are in the ' + currentRoom)
     if 'deets' in rooms[currentRoom]:
-        print('You quickly scan the room and see that ' +
+        print('You quickly scan the immediate area and see that ' +
               rooms[currentRoom]['deets'])
 
     # print the current inventory
@@ -47,6 +47,12 @@ def showStatus():
     # print an item if there is one
     if "item" in rooms[currentRoom]:
         print('You see a ' + rooms[currentRoom]['item'])
+    # print a weapon if there is one
+    if "weapon" in rooms[currentRoom]:
+        print('You see a ' + rooms[currentRoom]['weapon'])
+    # print a shield if there is one
+    if "shield" in rooms[currentRoom]:
+        print('You see a ' + rooms[currentRoom]['shield'])
     print("---------------------------")
 
 
@@ -96,6 +102,24 @@ while True:
             print(move[1] + ' got!')
             # delete the item from the room
             del rooms[currentRoom]['item']
+        # if the item contains a weapon, and they wish to pick it up and equip it
+        if "weapon" in rooms[currentRoom] and move[1] in rooms[currentRoom]['weapon']:
+            # add item to their right hand
+            inventory += [move[1]]
+            # display a msg to player to show they now carry the weapon in their strong hand
+            print('The ' +
+                  move[1] + ' has been retrieved & equipped in your strong hand. You are now a little more dangerous.')
+            # delete the item from the room
+            del rooms[currentRoom]['weapon']
+        # if the item contains a shield, and they wish to pick it up and equip it
+        if "shield" in rooms[currentRoom] and move[1] in rooms[currentRoom]['shield']:
+            # add item to their off hand
+            inventory += [move[1]]
+            # display a msg to player to show they now carry the shield in their off hand
+            print(' The ' +
+                  move[1] + ' has been picked up and equipped in your off hand. You are now a little more safe from attack.')
+            # delete the item from the room
+            del rooms[currentRoom]['shield']
         # otherwise, if the item isn't there to get
         else:
             # tell them they can't get it

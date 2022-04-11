@@ -1,7 +1,7 @@
 # A dictionary linking a room to other rooms
 rooms = {
 
-    'Great Hall': {                                                 # main feature interior of castl black, center of structure
+    'Great Hall': {                                                 # (1) main feature interior of castl black, center of structure
         'deets': 'this is a great feasting hall, exits lie to the north, eastnorth, eastsouth, south and west.',
         'north': 'Kitchen',
         'eastnorth': 'The Shieldhall',
@@ -10,7 +10,7 @@ rooms = {
         'south': 'Twenyard',
         'item': 'key',
     },
-    'Kitchen': {                                                    # where food is prepped, E of pantry, N of great hall
+    'Kitchen': {                                                    # (2) where food is prepped, E of pantry, N of great hall
         'deets': 'this is a kitchen, exits lie to the west, south and east. The are stairs ascending upwards as well.',
         'west': 'Pantry',
         'south': 'Great Hall',
@@ -18,38 +18,38 @@ rooms = {
         'upstairs': 'Cook\'s Quarters',
         'item': 'pan',
     },
-    'Pantry': {                                                     # where food is stored, W of kitchen, above W Vaults
+    'Pantry': {                                                     # (3) where food is stored, W of kitchen, above W Vaults
         'deets': 'this is a pantry, exits lie to the east and south. You can also see stairs descending down.',
         'downstairs': 'The Vaults West',
         'east': 'Kitchen',
         'south': 'West Courtyard',
         'item': 'bread',
     },
-    'The Vaults West': {                                            # W room of underground vault
+    'The Vaults West': {                                            # (4) W room of underground vault
         'deets': 'this is an underground cellar of sorts, exits lie to the east and the ascending stairs from whence you came.',
         'upstairs': 'Pantry',
         'east': 'The Vaults East',
         'item': 'frozen meat',
     },
-    'The Vaults East': {                                            # E room of underground vault, under kitchen
+    'The Vaults East': {                                            # (5) E room of underground vault, under kitchen
         'deets': 'this is an extension of the same underground cellar, exits lie to the east and west.',
         'west': 'The Vaults West',
         'east': 'The Library West',
         'item': 'frozen meat',
     },
-    'The Library West': {                                           # W room of underground library, under shieldhall
+    'The Library West': {                                           # (6) W room of underground library, under shieldhall
         'deets': 'this is an underground library, exits lie to the east and west.',
         'west': 'The Vaults East',
         'east': 'The Library East',
         'item': 'books',
     },
-    'The Library East': {                                           # E room of underground library, under armory
+    'The Library East': {                                           # (7) E room of underground library, under armory
         'deets': 'this is an extension of the underground library, exits lie to the west and ascending stairs.',
         'west': 'The Library West',
         'upstairs': 'Armory',
         'item': 'scrolls',
     },
-    'The Shieldhall': {                                             # where great feast are taken, adjoined by both kitchen and great hall
+    'The Shieldhall': {                                             # (8) where great feast are taken, adjoined by both kitchen and great hall
         'deets': 'this is the primary feasting hall, exits lie to the westnorth, westsouth, south and east.',
         'westnorth': 'Kitchen',
         'westsouth': 'Great Hall',
@@ -57,7 +57,7 @@ rooms = {
         'east': 'East Courtyard',
         'item': 'ale',
     },
-    'East Courtyard': {                                             # large courtyard on E side of great hall
+    'East Courtyard': {                                             # (9) large courtyard on E side of great hall
         'deets': 'this is the eastern courtyard, you see the Shieldhall to the north, another entrance to the Shieldhall to the westnorth, the Great Hall to the westsouth, the South East Centre Watch Tower to the south and the Training Yard to the east. Beyond that, the accoutrements of the eastern wall',
         'north': 'The Shieldhall',
         'westnorth': 'The Shieldhall',
@@ -65,7 +65,7 @@ rooms = {
         'east': 'Training Yard',
         'south': 'South East Centre Watch Tower',
     },
-    'Training Yard': {                                              # larger training yard on E side of dining hall
+    'Training Yard': {                                              # (10) larger training yard on E side of dining hall
         'deets': 'this is the Training Yard, the East Courtyard lies directly to the west. To the northeast is the imposing Great Door to the Tunnel Under the Wall.  To the northwest is the Armory. To the south lies the South East Middle Watch Tower. Entrances to the Eastgate South lie to the eastsouth, and Eastgate North to the eastnorth, respectively.',
         'west': 'East Courtyard',
         'northeast': 'Great Door to the Tunnel Under the Wall',
@@ -75,330 +75,406 @@ rooms = {
         'eastnorth': 'Eastgate North',
         'east': 'Eastgate',
     },
-    'West Courtyard': {                                             # western courtyard and small training yard
+    'West Courtyard': {                                             # (11) western courtyard and small training yard
+        'deets': 'this is the West Courtyard where a lot of activity is usually taking place. To the northeast is the Pantry.  To the north is the Elevator which ascends the Wall. On the northwest side is the Flint Barracks where most of the brothers of the Night\'s Watch rest their weary heads when they can. Due west is the Westgate and beyond that the King\'s Road leading west and south to the rest of the Seven Kingdoms. Just north of the gate, to the westnorth is the Tower of the Guards, where many of the fine guards of Castle Black have their beds. On the westsouth is the King\'s Tower -- the highest and best looking building in Castle Black.  It is reserved for visits from the King of the Andals, Rhoynar and the First Men and Protector of the Seven Kingdoms - although no one can recall the last time a King visited this harrowed place.',
         'northeast': 'Pantry',
         'north': 'Elevator to the Top of the Wall',
         'northwest': 'Flint Barracks',
         'west': 'Westgate',
         'westnorth': 'The Tower of the Guards',
         'westsouth': 'The King\'s Tower',
-        'upstairs': 'West Overgate',
     },
-    'Flint Barracks': {                                             # 2nd floor Barracks E of TotG, residence most of brothers of the night's watch reside
+    'Flint Barracks': {                                             # (12) 2nd floor Barracks E of TotG, residence most of brothers of the night's watch reside
+        'deets': 'this is the Flint Barracks, where the majority of the brothers of the Night\'s Watch sleep, when they can. The exits from this place are stairs going up and down, as well as a door to the south and another to the east.',
         'upstairs': 'Flint Barracks Second Floor',
         'downstairs': 'The Vaults West',
         'south': 'West Courtyard',
         'east': 'Tower of the Guards',
     },
-    'Flint Barracks Second Floor': {                                # 2nd floor Barracks E of TotG, residence most of BotNW reside
+    'Flint Barracks Second Floor': {                                # (13) 2nd floor Barracks E of TotG, residence most of BotNW reside
+        'deets': 'this is the second floor of the Flint Barracks.  The only exits are downstairs and a door to the west.',
         'downstairs': 'Flint Barracks',
         'west': 'Tower of the Guards Second Floor',
     },
-    'Tower of the Guards': {                                        # ground floor of TotG, large structure that makes up remainder of West wall
+    'Tower of the Guards': {                                        # (14) ground floor of TotG, large structure that makes up remainder of West wall
+        'deets': 'this is the ground floor of the Tower of the Guards, where Castle Black\'s guards rest. The only exits are upstairs and a door to the south.',
         'upstairs': 'Tower of the Guards Second Floor',
         'south': 'North Westgate',
     },
-    'Tower of the Guards Second Floor': {                           # 2nd floor of TotG, large structure that makes up remainder of West wall
+    'Tower of the Guards Second Floor': {                           # (15) 2nd floor of TotG, large structure that makes up remainder of West wall
+        'deets': 'this is the second floor of the Tower of the Guards, where Castle Black\'s guards rest. The only exits are upstairs, downstairs and doors to the south and east.',
         'upstairs': 'Tower of the Guards Third Floor',
         'downstairs': 'Tower of the Guards',
         'south': 'North Westgate Second Floor',
         'east': 'Tower of the Guards Second Floor'
     },
-    'Tower of the Guards Third Floor': {                            # 3rd floor of TotG, large structure that makes up remainder of West wall
+    'Tower of the Guards Third Floor': {                            # (16) 3rd floor of TotG, large structure that makes up remainder of West wall
+        'deets': 'this is the third floor of the Tower of the Guards, where Castle Black\'s guards rest. The only exits are upstairs, downstairs and a door to the south.',
         'upstairs': 'Tower of the Guards Fourth Floor',
         'downstairs': 'Tower of the Guards Second Floor',
         'south': 'West Overgate',
     },
-    'Tower of the Guards Fourth Floor': {                           # top floor of TotG, large structure that makes up remainder of West wall
+    'Tower of the Guards Fourth Floor': {                           # (17) top floor of TotG, large structure that makes up remainder of West wall
+        'deets': 'this is the fourth floor of the Tower of the Guards, where Castle Black\'s guards rest. The only exits are  downstairs.',
         'downstairs': 'Tower of the Guards Third Floor',
     },
-    'North Westgate': {                                             # ground floor of defensive structure at north end of gate
+    'North Westgate': {                                             # (18) ground floor of defensive structure at north end of gate
+        'deets': 'this is the defensive tower on the north side of the Westgate. The door to the north leads into the Tower of the Guards and upstairs is the only other exit.',
         'north': 'Tower of the Guards',
         'upstairs': 'North Westgate Second Floor',
     },
-    'North Westgate Second Floor': {                                # 2nd floor of defensive structure at north end of gate
+    'North Westgate Second Floor': {                                # (19) 2nd floor of defensive structure at north end of gate
+        'deets': 'this is the second floor of the defensive tower on the north side of the Westgate. Exits are north, upstairs and downstairs.',
         'north': 'Tower of the Guards Second Floor',
         'upstairs': 'West Overgate',
         'downstairs': 'North Westgate',
     },
-    'West Overgate': {                                               # walkway over gate (3rd level above ground)
-        'east': 'Overlook to the West Courtyard',
-        'west': 'Overlook to the King\'s Road',
+    'West Overgate': {                                               # (20) walkway over gate (3rd level above ground)
+        'deets': 'this is the walkway over the Westgate. Turn east and you look over the West Courtyard, turn west and you see the King\'s Road and anyone travelling down it for miles.  The exits to the north and south lead to the Tower of the Guards and the King\'s Tower, respectively.  There are stairs descending on the north end to the North Westgate [downstairs north end] and south end to the South Westgate [downstairs south end].',
         'north': 'Tower of the Guards Third Floor',
         'south': 'King\'s Tower Third Floor',
         'downstairs south end': 'South Westgate Second Floor',
         'downstairs north end': 'North Westgate Second Floor',
     },
-    'South Westgate': {                                             # ground floor of defensive structure at south end of gate
+    'South Westgate': {                                             # (21) ground floor of defensive structure at south end of gate
+        'deets': 'this is the South Westgate, the defensive tower on the south side of the Westgate. Exits are to the south, to the King\'s Tower and upstairs to the second floor.',
         'south': 'King\'s Tower',
         'upstairs': 'South Westgate Second Floor',
     },
-    'South Westgate Second Floor': {                                # 2nd floor of defensive structure at south end of gate
+    'South Westgate Second Floor': {                                # (22) 2nd floor of defensive structure at south end of gate
+        'deets': 'xthis is the second floor of the South Westgate. Exits are up and down stairs, as well as to the south into the second floor of the King\'s Tower.',
         'south': 'King\'s Tower Second Floor',
         'upstairs': 'West Overgate',
         'downstairs': 'South Westgate',
     },
-    'King\'s Tower': {                                              # ground floor of King's Tower
+    'King\'s Tower': {                                              # (23) ground floor of King's Tower
+        'deets': 'this is the King\'s Tower, a tower reserved specifically for visits from the King of the Andals, Rhoynar and the First Men - the Protector of the Seven Kingdoms.  Exits are to the north into the South Westgate and upstairs.',
         'north': 'South Westgate',
         'upstairs': 'King\'s Tower Second Floor',
     },
-    'King\'s Tower Second Floor': {                                 # 2nd floor of King's Tower
+    'King\'s Tower Second Floor': {                                 # (24) 2nd floor of King's Tower
+        'deets': 'this is the second floor of the King\'s Tower.  Exits lie to the north, east and up and down stairs.',
         'north': 'South Westgate Second Floor',
         'upstairs': 'King\'s Tower Third Floor',
         'downstairs': 'King\'s Tower',
         'east': 'King\'s Tower Lower Battlement',
     },
-    'King\'s Tower Third Floor': {                                  # 3rd floor of King's Tower
+    'King\'s Tower Third Floor': {                                  # (25) 3rd floor of King's Tower
+        'deets': 'this is the third floor of the King\'s Tower.  Exits lie to the north, east and up and down stairs.',
         'north': 'West Overgate',
         'upstairs': 'King\'s Tower Fourth Floor',
         'downstairs': 'King\'s Tower Second Floor',
         'east': 'King\'s Tower Upper Battlement',
     },
-    'King\'s Tower Fourth Floor': {                                 # 4th floor of King's Tower
+    'King\'s Tower Fourth Floor': {                                 # (26) 4th floor of King's Tower
+        'deets': 'this is the fourth floor of the King\'s Tower.  Exits lie to stairs - up and down.  By the look of you - you don\'t belong here in the Chambers reserved for the King\'s advisor.',
         'upstairs': 'King\'s Tower Fifth Floor',
         'downstairs': 'King\'s Tower Third Floor',
     },
-    'King\'s Tower Fifth Floor': {                                  # 5th floor of King's Tower
+    'King\'s Tower Fifth Floor': {                                  # (27) 5th floor of King's Tower
+        'deets': 'this is the fifth floor of the King\'s Tower.  Exits lie to stairs - up and down.  By the look of you - you don\'t belong here in the Chambers reserved for the King\'s personal steward.',
         'upstairs': 'King\'s Tower Perch',
         'downstairs': 'King\'s Tower Fourth Floor',
     },
-    'King\'s Tower Perch': {                                        # top floor of King's Tower
+    'King\'s Tower Perch': {                                        # (28) top floor of King's Tower
+        'deets': 'this is the top floor of the King\'s Tower.  You should leave.  This place is not meant for you.  If you are found here, you will likely be relieved of your head. The exit is to the downstairs',
         'downstairs': 'King\'s Tower Fifth Floor',
     },
-    'King\'s Tower Lower Battlement': {                             # lower b'ment between King's Tower and LC's side stoop
+    'King\'s Tower Lower Battlement': {                             # (29) lower b'ment between King's Tower and LC's side stoop
+        'deets': 'this is the lower battlement of the King\'s Tower. Exits are to the east, west and upstairs.',
         'upstairs': 'King\'s Tower Upper Battlement',
         'east': 'Lord Commander\'s Stoop',
         'west': 'King\'s Tower Second Floor',
     },
-    'King\'s Tower Upper Battlement': {                             # upper b'ment between King's Tower and LC's roof b'ment
+    'King\'s Tower Upper Battlement': {                             # (30) upper b'ment between King's Tower and LC's roof b'ment
+        'deets': 'this is the upper battlement of the King\'s Tower. Exits are to the east, west and downstairs.',
         'downstairs': 'King\'s Tower Lower Battlement',
         'east': 'Lord Commander\'s Battlement',
         'west': 'King\'s Tower Third Floor',
     },
-    'Lord Commander\'s Side Stoop': {                               # LC's wooden deck west side of quarters, 1 level off ground
+    'Lord Commander\'s Side Stoop': {                               # (31) LC's wooden deck west side of quarters, 1 level off ground
+        'deets': 'this is the east side stoop (wooden walkway and terrace) of the Lord Commander\'s Quarters.  Exits are to the north, onto the Front Stoop, east into the Lord Commander\'s Quarters, to the west into the King\'s Tower Lower Battlement and downstairs to the West Courtyard.',
         'north': 'Lord Commander\'s Front Stoop',
         'east': 'Lord Commander\'s Quarters',
         'west': 'King\'s Tower Lower Battlement',
         'downstairs': 'West Courtyard',
     },
-    'Lord Commander\'s Front Stoop': {                               # LC's wooden deck north of quarters, 1 level off ground
+    'Lord Commander\'s Front Stoop': {                              # (32) LC's wooden deck north of quarters, 1 level off ground
+        'deets': 'this is the front stoop (wooden walkway and terrace) of the Lord Commander\'s Quarters. Exits lie to the south into the quarters of the Lord Commander, west onto the side stoop and downstairs into the West Courtyard.',
         'south': 'Lord Commander\'s Quarters',
         'west': 'Lord Commander\'s Side Stoop',
         'downstairs': 'West Courtyard',
     },
-    'Lord Commander\'s Quarters': {                                 # LC's quarters W of The Rookery tower
+    'Lord Commander\'s Quarters': {                                 # (33) LC's quarters W of The Rookery tower
+        'deets': 'this is the Quarters of the Lord Commander of the Night\'s Watch.  This is not really a place to hang out unless you don\'t want to remain living.  Exits are up and down stairs as well as doors to the west and north.',
         'upstairs': 'Lord Commander\'s Battlement',
         'downstairs': 'Lord Commander\'s Stewards Quarters',
         'west': 'Lord Commander\'s Side Stoop',
         'north': 'Lord Commander\'s Front Stoop',
     },
-    'Lord Commander\'s Stewards Quarters': {                        # LC's stewards quarters below LC's quarters
+    'Lord Commander\'s Stewards Quarters': {                        # (34) LC's stewards quarters below LC's quarters
+        'deets': 'this is the qarters of the steward of Lord Commander.  Generally, the wise consider this person and their place of residence as something not to be trespassed upon either.  The only obvious exit is upstairs.',
         'upstairs': 'Lord Commander\'s Quarters',
     },
-    'Lord Commander\'s Battlement': {                               # roof battlement above LC's quarters
+    'Lord Commander\'s Battlement': {                               # (35) roof battlement above LC's quarters
+        'deets': 'this is the roof of the Lord Commander\'s residence, which is also a battlement.  The exits are east to The Rookery upper battlement and west to the King\'s Tower upper battlement, as well as back downstairs into the residence.',
         'downstairs': 'Lord Commander\'s Quarters',
         'west': 'King\'s Tower Upper Battlement',
         'east': 'The Rookery Scroll Room',
     },
-    'The Rookery Scroll Room': {                                    # 3rd floor of tower on center of southern wall
+    'The Rookery Scroll Room': {                                    # (36) 3rd floor of tower on center of southern wall
+        'deets': 'this is the third floor of The Rookery, the scroll room of the Maester. Typically, the only folks you\'ll find in here are the Maester or his apprentice.  The exits are up and down stairs as well as east and west.',
         'upstairs': 'Maester\'s Quarters',
         'downstairs': 'The Rookery Second Floor',
         'west': 'Lord Commander\'s Battlement',
         'east': 'Rookery Upper Battlement',
     },
-    'Maester\'s Quarters': {                                        # 4th floor of tower on center of southern wall
+    'Maester\'s Quarters': {                                        # (37) 4th floor of tower on center of southern wall
+        'deets': 'this is the fourth floor of The Rookery, otherwise known as the Maester\'s bedchamber and quarters. The only exits here are up and down stairs.',
         'upstairs': 'Maester\'s Raven Loft',
         'downstairs': 'The Rookery Scroll Room',
     },
-    'Maester\'s Raven Loft': {                                      # top (5th) floor of tower on center of southern wall
+    'Maester\'s Raven Loft': {                                      # (38) top (5th) floor of tower on center of southern wall
+        'deets': 'this is the Raven\'s Loft, from where the Maester will attach messages to the Raven\'s and send them in flight to their destination to deliver message of great import to the Seven Kingdoms.  There are many birdcage\'s here but no Ravens. The only exit is downstairs, however, there are balconies along all directions - north, east, south and west.',
         'downstairs': 'Maester\'s Quarters',
         'north': 'Rookery Raven Loft North Balcony',
         'south': 'Rookery Raven Loft South Balcony',
         'east': 'Rookery Raven Loft East Balcony',
         'west': 'Rookery Raven Loft West Balcony',
     },
-    'The Rookery Second Floor': {                                   # 2nd floor of tower on center of southern wall
+    'The Rookery Second Floor': {                                   # (39) 2nd floor of tower on center of southern wall
+        'deets': 'this is the second floor of The Rookery, the central most tower on the southern wall of the Castle Black, at the top of this tower is a Maester\'s Raven Loft. Exits from this room are up and down stairs as well as west, east and north.',
         'upstairs': 'The Rookery Scroll Room',
         'downstairs': 'The Rookery',
         'west': 'Lord Commander\'s Front Stoop',
         'east': 'Rookery Lower Battlement',
         'north': 'Courtyard Overwalk',
     },
-    'The Rookery': {                                                # 1st floor of tower on center of southern wall
+    'The Rookery': {                                                # (40) 1st floor of tower on center of southern wall
+        'deets': 'this is the first floor of The Rookery, the central most tower on the southern wall of the Castle Black, at the top of this tower is a Maester\'s Raven Loft. Exits from this room are up and down stairs, as well as a door to the north.',
         'upstairs': 'The Rookery Second Floor',
         'downstairs': 'The Rookery Basement',
         'north': 'Twenyard',
     },
-    'Twenyard': {                                                   # area between the west and east courtyards
+    'Twenyard': {                                                   # (41) area between the west and east courtyards
+        'deets': 'this is the Twenyard, or the area between the \'yards to the east and west.  Above this is an overwalk that serves to separate the two yards. Exits are each of the four cardinal directions - north to the Great Hall, west to the West Courtyard, east to the East Courtyard and south into the Rookery, the central most tower on the southern wall of the Castle Black.',
         'north': 'Great Hall',
         'west': 'West Courtyard',
         'east': 'East Courtyard',
         'south': 'The Rookery',
     },
-    'Rookery Lower Battlement': {                                   # Lower battlement between The Rookery and watch tower to E
+    'Rookery Lower Battlement': {                                   # (42) Lower battlement between The Rookery and watch tower to E
+        'deets': 'this is the lower battlement of The Rookery, on the eastern side of the tower. Exits are to the west and east.',
         'west': 'The Rookery Second Floor',
         'east': 'South East Centre Watch Tower Second Floor',
     },
-    'Rookery Upper Battlement': {                                   # Upper battlement between The Rookery and watch tower to E
+    'Rookery Upper Battlement': {                                   # (43) Upper battlement between The Rookery and watch tower to E
+        'deets': 'this is the upper battlement of The Rookery, on the eastern side of the tower. Exits are to the west, to the Rookery Scroll Room, and east to the South East Centre watch tower.',
         'west': 'The Rookery Scroll Room',
         'east': 'South East Centre Watch Tower Top Floor',
     },
-    'South East Centre Watch Tower': {                              # 1st floor of watch tower immediately E of The Rookery
+    'South East Centre Watch Tower': {                              # (44) 1st floor of watch tower immediately E of The Rookery
+        'deets': 'this is the western-most watch tower on the southern wall between the towers of The Rookery and The Lance, it is three floors tall and this is the ground floor. Exits lie to the north (into the East Courtyard) and upstairs.',
         'upstairs': 'South East Centre Watch Tower Second Floor',
+        'north': 'East Courtyard',
     },
-    'South East Centre Watch Tower Second Floor': {                 # 2nd floor of watch tower immediately E of The Rookery
+    'South East Centre Watch Tower Second Floor': {                 # (45) 2nd floor of watch tower immediately E of The Rookery
+        'deets': 'this is the second floor of the western-most watch tower on the southern wall between the towers of The Rookery and The Lance. Exits lie to the west (The Rookery Lower Battlement), the east (South East Centre Lower Battlement), as well as up and downstairs.',
         'upstairs': 'South East Centre Watch Tower Top Floor',
         'downstairs': 'South East Centre Watch Tower',
         'west': 'Rookery Lower Battlement',
         'east': 'South East Centre Lower Battlement',
     },
-    'South East Centre Watch Tower Top Floor': {                    # top floor of watch tower immediately E of The Rookery (46)
+    'South East Centre Watch Tower Top Floor': {                    # (46) top floor of watch tower immediately E of The Rookery (46)
+        'deets': 'this is the third floor of the western-most watch tower on the southern wall between the towers of The Rookery and The Lance. Exits lie to the west (The Rookery Upper Battlement), the east (South East Centre Upper Battlement), as well as downstairs.',
         'downstairs': 'South East Centre Watch Tower Second Floor',
         'west': 'Rookery Upper Battlement',
         'east': 'South East Centre Upper Battlement',
     },
-    'South East Centre Lower Battlement': {                         # lower b'ment between Centre & Middle watch towers on S wall
+    'South East Centre Lower Battlement': {                         # (47) lower b'ment between Centre & Middle watch towers on S wall
+        'deets': 'this is the lower battlement connecting the South East Centre and South East Middle watch towers. Exits are east and west.',
         'west': 'South East Centre Watch Tower Second Floor',
         'east': 'South East Middle Watch Tower Second Floor',
     },
-    'South East Centre Upper Battlement': {                         # upper b'ment between Centre & Middle watch towers on S wall
+    'South East Centre Upper Battlement': {                         # (48) upper b'ment between Centre & Middle watch towers on S wall
+        'deets': 'this is the upper battlement connecting the South East Centre and South East Middle watch towers. Exits are east and west.',
         'west': 'South East Centre Watch Tower Top Floor',
         'east': 'South East Middle Watch Tower Top Floor',
     },
-    'South East Middle Watch Tower': {                              # ground floor of watch tower immediately W of The Lance
+    'South East Middle Watch Tower': {                              # (49) ground floor of watch tower immediately W of The Lance
+        'deets': 'this is the eastern-most watch tower on the southern wall between the towers of The Rookery and The Lance, it is three floors tall and this is the ground floor. Exits lie to the north (into the Training Yard) and upstairs.',
         'upstairs': 'South East Middle Watch Tower Second Floor',
+        'north': 'Training Yard',
     },
-    'South East Middle Watch Tower Second Floor': {                 # 2nd floor of watch tower immediately W of The Lance (50)
+    'South East Middle Watch Tower Second Floor': {                 # (50) 2nd floor of watch tower immediately W of The Lance
+        'deets': 'this is the second floor of the eastern-most watch tower on the southern wall between the towers of The Rookery and The Lance. Exits lie to the west (South East Centre Lower Battlement), the east (West Lance Lower Battlement), as well as up and downstairs.',
         'upstairs': 'South East Middle Watch Tower Top Floor',
         'downstairs': 'South East Middle Watch Tower',
         'west': 'South East Centre Lower Battlement',
         'east': 'West Lance Lower Battlement',
     },
-    'South East Middle Watch Tower Top Floor': {                    # 3rd floor of watch tower immediately W of The Lance
+    'South East Middle Watch Tower Top Floor': {                    # (51) 3rd floor of watch tower immediately W of The Lance
+        'deets': 'this is the top floor of the eastern-most watch tower on the southern wall between the towers of The Rookery and The Lance. Exits lie to the west (South East Centre Upper Battlement), the east (West Lance Upper Battlement), as well as downstairs.',
         'downstairs': 'South East Middle Watch Tower Second Floor',
         'west': 'South East Centre Upper Battlement',
         'east': 'West Lance Upper Battlement',
     },
-    'West Lance Lower Battlement': {                                # lower level of b'ment connecting The Lance to SE Middle watch tower
+    'West Lance Lower Battlement': {                                # (52) lower level of b'ment connecting The Lance to SE Middle watch tower
+        'deets': 'this is the lower battlement between the West Lance Tower and the South Est Middle Watch Tower, exits lie to the east and west.',
         'west': 'South East Middle Watch Tower Second Floor',
         'east': 'The Lance Second Floor',
     },
-    'West Lance Upper Battlement': {                                # upper level of b'ment connecting The Lance to SE Middle watch tower
+    'West Lance Upper Battlement': {                                # (53) upper level of b'ment connecting The Lance to SE Middle watch tower
+        'deets': 'this is the lower battlement between the West Lance Tower and the South Est Middle Watch Tower, exits lie to the east and west.',
         'west': 'South East Middle Watch Tower Top Floor',
         'east': 'The Lance Third Floor',
     },
-    'The Lance': {                                                  # ground floor SE most tower, SE corner of Castle Black
+    'The Lance': {                                                  # (54) ground floor SE most tower, SE corner of Castle Black
+        'deets': 'this is the ground floor of the southeastern-most tower of the Castle Black, affectionately named, *The Lance of the Black*, where the eastern wall meets the southern wall. This tower is four levels tall and is a prominent feature of the Castle Black when approaching from the east. The exits are doors to the north and the west, as well as upstairs. There are arrowslits on all four walls.',
         'upstairs': 'The Lance Second Floor',
         'north': 'Training Yard',
         'west': 'East Courtyard',
     },
-    'The Lance Second Floor': {                                     # 2nd floor SE most tower, SE corner of Castle Black
+    'The Lance Second Floor': {                                     # (55) 2nd floor SE most tower, SE corner of Castle Black
+        'deets': 'this is the second floor of the southeastern-most tower of the Castle Black. The exits are doors to the north and the west, as well as upstairs and downstairs. There are arrowslits on all four walls.',
         'downstairs': 'The Lance',
         'upstairs': 'The Lance Third Floor',
         'north': 'Eastgate South Lower Battlement',
         'west': 'West Lance Lower Battlement',
     },
-    'The Lance Third Floor': {                                      # 3rd floor SE most tower, SE corner of Castle Black
+    'The Lance Third Floor': {                                      # (56) 3rd floor SE most tower, SE corner of Castle Black
+        'deets': 'this is the third floor of the southeastern-most tower of the Castle Black. The exits are doors to the north and the west, as well as upstairs and downstairs.  There are small windows and arrowslits on all four walls.',
         'downstairs': 'The Lance Second Floor',
         'upstairs': 'The Lance Fourth Floor',
         'north': 'Eastgate South Upper Battlement',
         'west': 'West Lance Upper Battlement',
     },
-    'The Lance Fourth Floor': {                                     # Top floor SE most tower, SE corner of Castle Black
+    'The Lance Fourth Floor': {                                     # (57) Top floor SE most tower, SE corner of Castle Black
+        'deets': 'this is the top floor of * The Lance of the Black*. The only exit from here is back downstairs. There are small windows and arrowslits on all four walls. You can\'t help but wonder why there would be visible arrowslits on all the floors you\'ve been on, even facing the inside of the courtyard.',
         'downstairs': 'The Lance Third Floor',
     },
-    'Eastgate South Lower Battlement': {                            # Lower b'ment connecting Eastgate watch tower to The Lance
+    'Eastgate South Lower Battlement': {                            # (58) Lower b'ment connecting Eastgate watch tower to The Lance
+        'deets': 'this is the lower battlement between the Eastgate and The Lance. Exits are north and south.',
         'north': 'Eastgate South Second Floor',
         'south': 'The Lance Second Floor',
     },
-    'Eastgate South Upper Battlement': {                            # Lower b'ment connecting Eastgate watch tower to The Lance
+    'Eastgate South Upper Battlement': {                            # (59) Lower b'ment connecting Eastgate watch tower to The Lance
+        'deets': 'this is the lower battlement between the Eastgate and The Lance. Exits are north and south.',
         'north': 'Eastgate South Third Floor',
         'south': 'The Lance Third Floor',
     },
-    'Eastgate South': {                                             # 60
+    'Eastgate South': {                                             # (60) The 1st floor of the defensive tower on the south end of the eastern gate.
+        'deets': 'this is the defensive tower on the south side of the Eastgate. Exits are upstairs and to the west.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'upstairs': 'Eastgate South Second Floor',
         'west': 'Training Yard',
     },
-    'Eastgate South Second Floor': {
+    'Eastgate South Second Floor': {                                # (61) The 2nd floor of the defensive tower on the south end of the eastern gate.
+        'deets': 'this is the second floor of the defensive tower on the south side of the Eastgate. Exits are upstairs, downstairs and to the south.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'south': 'Eastgate South Lower Battlement',
         'upstairs': 'Eastgate South Third Floor',
         'downstairs': 'Eastgate South',
     },
-    'Eastgate South Third Floor': {
+    'Eastgate South Third Floor': {                                 # (62) The 3rd floor of the defensive tower on the south end of the eastern gate.
+        'deets': 'this is the third floor of the defensive tower on the south side of the Eastgate. Exits are north, south & downstairs.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'south': 'Eastgate South Upper Battlement',
         'downstairs': 'Eastgate South Second Floor',
         'north': 'Eastgate Overlook',
     },
-    'Eastgate Overlook': {
-        'east': 'Overlook of King\'s Road East',
-        'west': 'Overlook of Training Yard',
+    'Eastgate Overlook': {                                          # (63) The walkway over the eastern gate
+        'deets': 'this is the walkway over the Eastgate. From here you can see the King\'s Road to the east as it swerves left and right and eventually crosses the horizon. On the left is the Great Ice Wall. To the west is Training Yard. Exits lie to the north and south.',
         'north': 'Eastgate North Third Floor',
         'south': 'Eastgate South Third Floor',
     },
-    'Eastgate North Third Floor': {
+    'Eastgate North Third Floor': {                                 # (64) The 3rd floor of the defensive tower on the north end of the eastern gate.
+        'deets': 'this is the third floor of the defensive tower on the north side of the Eastgate. Exits are north, south & downstairs.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'north': 'Eastgate North Upper Battlement',
-        'upstairs': 'Eastgate Overlook',
+        'south': 'Eastgate Overlook',
         'downstairs': 'Eastgate North',
     },
-    'Eastgate North Second Floor': {
+    'Eastgate North Second Floor': {                                # (65) The 2nd floor of the defensive tower on the north end of the eastern gate.
+        'deets': 'this is the second floor of the defensive tower on the north side of the Eastgate. Exits are upstairs, downstairs and to the north.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'north': 'Eastgate North Lower Battlement',
         'upstairs': 'Eastgate North Third Floor',
         'downstairs': 'Eastgate North',
     },
-    'Eastgate North': {
+    'Eastgate North': {                                             # (66) The 1st floor of the defensive tower on the south end of the eastern gate.
+        'deets': 'this is the defensive tower on the north side of the Eastgate. Exits are upstairs and to the west.  There are arrowslits facing into the yard and east to the King\'s Road.',
         'west': 'Training Yard',
         'upstairs': 'Eastgate North Second Floor',
     },
-    'Eastgate North Lower Battlement': {
+    'Eastgate North Lower Battlement': {                            # (67) The lower battlement between the Eastgate defensive tower and Hardin\'s Tower.
+        'deets': 'this is the lower battlement connecting the Eastgate North defensive tower to Hardin\'s Tower. Exits from here are north and south.',
         'north': 'Hardin\'s Tower Second Floor',
         'south': 'Eastgate North Second Floor',
     },
-    'Eastgate North Upper Battlement': {
+    'Eastgate North Upper Battlement': {                            # (68) The upper battlement between the Eastgate defensive tower and Hardin\'s Tower.
+        'deets': 'this is the upper battlement connecting the Eastgate North defensive tower to Hardin\'s Tower. Exits from here are north and south.',
         'north': 'Hardin\'s Tower Third Floor',
         'south': 'Eastgate North Third Floor',
     },
-    'Hardin\'s Tower': {
+    'Hardin\'s Tower': {                                            # (69) The ground floor of the northeastern-most structure of Castle Black, at the north end of the eastern wall, conjoined with the Ice Wall.
+        'deets': 'this the ground floor of Hardin\'s Tower, the northeastern-most object in Castle Black. The exits from the room are upstairs and a door to the west which leads into the Training Yard.',
         'west': 'Training Yard',
         'upstairs': 'Hardin\'s Tower Second Floor',
     },
-    'Hardin\'s Tower Second Floor': {                               # 70
+    'Hardin\'s Tower Second Floor': {                               # (70) The 2nd floor of the northeastern-most structure of Castle Black, at the north end of the eastern wall, conjoined with the Ice Wall.
+        'deets': 'this the second floor of Hardin\'s Tower, the northeastern-most object in Castle Black. There on small arrowslits on the east wall and a small window on the west wall. The exits from the room are upstairs, downstairs and south into the Eastgate North Lower Battlement.',
         'downstairs': 'Hardin\'s Tower',
         'upstairs': 'Hardin\'s Tower Third Floor',
         'south': 'Eastgate North Lower Battlement',
     },
-    'Hardin\'s Tower Third Floor': {
+    'Hardin\'s Tower Third Floor': {                                # (71) The 3rd floor of the northeastern-most structure of Castle Black, at the north end of the eastern wall, conjoined with the Ice Wall.
+        'deets': 'this the third floor of Hardin\'s Tower, the northeastern-most object in Castle Black. There on small windows on the west and east walls. The exits from the room are upstairs, downstairs and south into the Eastgate North Upper Battlement.',
         'downstairs': 'Hardin\'s Tower Second Floor',
         'upstairs': 'Hardin\'s Tower Fourth Floor',
         'south': 'Eastgate North Upper Battlement',
     },
-    'Hardin\'s Tower Fourth Floor': {
+    'Hardin\'s Tower Fourth Floor': {                               # (72) The 4th & top floor of the northeastern-most structure of Castle Black, at the north end of the eastern wall, conjoined with the Ice Wall.
+        'deets': 'this the top floor of Hardin\'s Tower, the northeastern-most object in Castle Black. There on small windows on the west, east and south walls. The only exit is descending down the stairs.',
         'downstairs': 'Hardin\'s Tower Third Floor',
     },
-    'Armory': {
+    'Armory': {                                                     # (73) The armory
+        'deets': 'this is the storage area for all the shields, armor, swords, weapons and other accoutrements of battle that the brothers of the Night\'s Watch may need for castle defense, defense of the wall and training, as well as their animal companion\'s armor.  Although, most brothers will be found carrying their weapons on them at all times due to the ever-potential threat of attack. The only exits you see are a door to the east, another to the south and a staircase descending down.',
         'east': 'Training Yard',
         'south': 'East Courtyard',
         'downstairs': 'The Library East',
+        'weapon': 'longsword',
+        'shield': 'buckler',
     },
-    'Westgate': {
+    'Westgate': {                                                   # (74) The gate on the western wall
+        'deets': 'this is the gate exiting the grounds on the west side of Castle Black.  Most visitors from the south will come up the King\'s Road and through this gate. This western exit to the King\'s Road leads to the ruins at Queensgate Castle as well as other castles and remnants of castles along the western half of the Wall.',
         'east': 'West Courtyard',
     },
-    'Eastgate': {                                                   # 75
+    'Eastgate': {                                                   # (75) The gate on the eastern wall
+        'deets': 'this is the gate exiting the grounds on the east side of Castle Black. This eastern exit to the King\'s Road leads to the ruins at Oakenshield Castle as well as other castles and remnants of castles along the eastern half of the Wall.',
         'west': 'Training Yard',
     },
-    'Cook\'s Quarters': {
+    'Cook\'s Quarters': {                                           # (76) The personal chambers of the cook.
         'deets': 'this is the Cook\'s Quarters, the only possible exit is the descending staircase to the Kitchen.',
         'downstairs': 'Kitchen',
     },
-    'Rookery Raven Loft North Balcony': {                           #
+    'Rookery Raven Loft North Balcony': {                           # (77) The north balcony of the Raven's Loft on the 5th floor of The Rookery.
+        'deets': 'this is the balcony at the top floor of The Rookery, on the north side of the building - overlooking the West Courtyard to the left and the East Courtyard to the right. Directly below is the Twenyard, the Great Hall and the imposing Ice Wall takes up the majority of the view. The only exit is back south into the Maester\'s Raven Loft.',
         'south': 'Maester\'s Raven Loft',
     },
-    'Rookery Raven Loft South Balcony': {                           #
+    'Rookery Raven Loft South Balcony': {                           # (78) The south balcony of the Raven's Loft on the 5th floor of The Rookery.
+        'deets': 'this is the balcony at the top floor of the Rookery, on the south side of the building.  You imagine that this is where the Maester releases most of the messenger Ravens that he sends off. Directly in front of you, you can see south to the horizon. The only exit is back north into the Maester\'s Raven Loft.',
         'north': 'Maester\'s Raven Loft',
     },
-    'Rookery Raven Loft East Balcony': {                            #
+    'Rookery Raven Loft East Balcony': {                            # (79) The east balcony of the Raven's Loft on the 5th floor of The Rookery.
+        'deets': 'this is the balcony on the east side of the building.  You can see the East Courtyard and Training Yard below to the left. At eye level, as far as the eye can see, the Great Wall of Ice extends the length of the view on the your left side. The only exit is back west into the Maester\'s Raven Loft.',
         'west': 'Maester\'s Raven Loft',
     },
-    'Rookery Raven Loft West Balcony': {                            # 80
+    'Rookery Raven Loft West Balcony': {                            # (80) The west balcony of the Raven's Loft on the 5th floor of The Rookery.
+        'deets': 'this is the balcony on the west side of the top floor of the building. You can see the Lord Commander\'s battlement, the West Courtyard and the Westgate below. Directly in front of you is the King\'s Tower. As far as you can see the Great Wall of Ice extends the length of the view on your right. The only exit is back east into the Maester\'s Raven Loft.',
         'east': 'Maester\'s Raven Loft',
+    },
+    'Courtyard Overwalk': {                                         # (81) The catwalk between the Great Hall & the 2nd floor of The Rookery.
+        'deets': 'this is the walkway that lies between the West and East Courtyard and connects the second floor of The Rookery to the Great Hall, although there is no entrance to the Great Hall from this walkway. This is merely a place to look over both courtyards at once and to drop a wall to separate them if need be.',
+        'south': 'The Rookery Second Floor',
+    },
+    'The Rookery Basement': {                                       # (82) The basement at the bottom of The Rookery.
+        'deets': 'this is a place for the Maester\'s concoctions. It is dark and cold in here and kinda spooky to be honest.  THe exit is upstairs.',
+        'upstairs': 'The Rookery',
     },
 }
