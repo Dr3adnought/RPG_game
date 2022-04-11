@@ -6,6 +6,8 @@ from rooms import rooms
 from monster_manual import monsters
 from time import sleep
 import time
+from newplayer import newPlayer
+
 
 # Replace RPG starter project with this code when new instructions are live
 
@@ -43,23 +45,21 @@ Possible directions of movement
 ''')
 
 
-crsr = "> "
+# def newPlayer():
+#     crsr = "> "
+#     # ask the player for input of their name
+#     clear()
 
+#     player = input(
+#         f"{crsr}Welcome vagabond, what is thy name? \n\n{crsr}").strip().title()
 
-def newPlayer():
-    # ask the player for input of their name
-    clear()
+#     # print("")
+#     for char in player:
+#         type_delay(char)
 
-    player = input(
-        f"{crsr}Welcome vagabond, what is thy name? \n\n{crsr}").strip().title()
-
-    # print("")
-    for char in player:
-        type_delay(char)
-
-    print(", welcome to the Game of Dragons!")
-    # print(type(player))
-    return player
+#     print(", welcome to the Game of Dragons!")
+#     # print(type(player))
+#     return player
 
 
 def showStatus():
@@ -91,12 +91,12 @@ inventory = []
 
 # start the player in the Hall
 currentRoom = 'Great Hall'
-player = newPlayer()
 
 showInstructions()
-sleep(3)
+sleep(8)
 clear()
-newPlayer()
+player = newPlayer()
+
 
 # loop forever
 while True:
@@ -154,9 +154,9 @@ while True:
             # delete the item from the room
             del rooms[currentRoom]['shield']
         # otherwise, if the item isn't there to get
-        else:
-            # tell them they can't get it
-            print('Can\'t get ' + move[1] + '!')
+        # else:
+        #     # tell them they can't get it
+        #     print('Can\'t get ' + move[1] + '!')
 
     # # If player enters a room with a monster
     # if 'monster' in rooms[currentRoom]
