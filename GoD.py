@@ -1,58 +1,71 @@
 #!/usr/bin/python3
 
+import sys
+import os
 from rooms import rooms
+from monster_manual import monsters
+from time import sleep
+import time
 
 # Replace RPG starter project with this code when new instructions are live
 
 
 def showInstructions():
+    # clear the screen, clean the place up a little
+    os.system('clear')
     # print a main menu and the commands
     print('''
-RPG Game
-========
-Commands:
-  go [direction]
-  get [item]
+         Game of Dragons
+========================================
+This screen will be cleared in 8 seconds.
+
+Commands availble to player:
+  go [direction]  get [item]
 
 Possible directions of movement
-  [north]
-  [south]
-  [east]
-  [west]
-  [downstairs]
-  [upstairs]
-  [downstairs north end]
-  [downstairs south end]
-  [westnorth]
-  [westsouth]
-  [eastnorth]
-  [eastsouth]
-  [northeast]
-  [northwest]
-  [southeast]
-  [southwest]
+  [north]   [south]   [east]   [west]
+  [downstairs]   [upstairs]   
+  [downstairs north end]   [downstairs south end]
+  [westnorth]   [westsouth]   [eastnorth]   [eastsouth]
+  [northeast]   [northwest]   [southeast]   [southwest]
 ''')
 
 
-def showStatus():
+crsr = "> "
+
+
+def newPlayer():
+    # ask the player for input of their name
+
+    newPlayer = input(
+        f"{crsr}Welcome vagabond, what is thy name? \n\n{crsr}").strip().title()
+    for l in newPlayer:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(0.1)
+    # print("\n")
+
+
+def showStatus(newPlayer):
+
     # print the player's current status
     print('---------------------------')
-    print('You are in the ' + currentRoom)
+    print(f'{newPlayer}, you are in the ' + currentRoom)
     if 'deets' in rooms[currentRoom]:
-        print('You quickly scan the immediate area and see that ' +
+        print(f'{newPlayer}, you quickly scan the immediate area and see that ' +
               rooms[currentRoom]['deets'])
 
     # print the current inventory
     print('Inventory : ' + str(inventory))
     # print an item if there is one
     if "item" in rooms[currentRoom]:
-        print('You see a ' + rooms[currentRoom]['item'])
+        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['item'])
     # print a weapon if there is one
     if "weapon" in rooms[currentRoom]:
-        print('You see a ' + rooms[currentRoom]['weapon'])
+        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['weapon'])
     # print a shield if there is one
     if "shield" in rooms[currentRoom]:
-        print('You see a ' + rooms[currentRoom]['shield'])
+        print(f'{newPlayer}, you see a ' + rooms[currentRoom]['shield'])
     print("---------------------------")
 
 
@@ -64,11 +77,14 @@ inventory = []
 currentRoom = 'Great Hall'
 
 showInstructions()
+sleep(3)
+os.system('clear')
+newPlayer()
 
 # loop forever
 while True:
 
-    showStatus()
+    showStatus(newPlayer)
 
     # get the player's next 'move'
     # .split() breaks it up into an list array
@@ -90,7 +106,7 @@ while True:
             currentRoom = rooms[currentRoom][move[1]]
         # there is no door (link) to the new room
         else:
-            print('You can\'t go that way!')
+            print('Come on mate, you can\'t go that way!')
 
     # if they type 'get' first
     if move[0] == 'get':
@@ -125,12 +141,15 @@ while True:
             # tell them they can't get it
             print('Can\'t get ' + move[1] + '!')
 
-    # Define how a player can win
-    if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:
-        print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
-        break
+    # # If player enters a room with a monster
+    # if 'monster' in rooms[currentRoom]
 
-    # If a player enters a room with a monster
-    elif 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
-        print('A monster has got you... GAME OVER!')
-        break
+    # # Define how a player can win
+    # if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:
+    #     print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
+    #     break
+
+    # # If a player enters a room with a monster
+    # elif 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
+    #     print('A monster has got you... GAME OVER!')
+    #     break
